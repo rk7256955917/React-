@@ -1,4 +1,19 @@
+import { useState } from "react";
 const App = () => {
+
+const [fullName, setfullName] = useState('');
+const [email, setemail] = useState('');
+const [password, setpassword] = useState('');
+
+
+const submitHandler=(e)=>{
+  e.preventDefault()
+  console.log(fullName,email,password);
+
+  setfullName('');
+  setemail('');
+  setpassword('');
+}
   return (
     <div className="h-screen bg-gray-200 flex items-center justify-center">
       <div className="bg-white rounded-xl shadow-lg p-8 w-96">
@@ -7,7 +22,10 @@ const App = () => {
           Registration Form
         </h1>
 
-        <form className="flex flex-col gap-4">
+        <form onSubmit={(e)=>{
+          submitHandler(e);
+        }}
+        className="flex flex-col gap-4">
 
           <div>
             <label className="block mb-1 font-semibold">
@@ -17,6 +35,10 @@ const App = () => {
               className="border-2 border-gray-300 rounded-md w-full px-3 py-2 focus:outline-none focus:border-emerald-600"
               type="text"
               placeholder="Enter your name"
+              value={fullName}
+              onChange={(e)=>{
+                setfullName(e.target.value);
+              }}
             />
           </div>
 
@@ -28,6 +50,10 @@ const App = () => {
               className="border-2 border-gray-300 rounded-md w-full px-3 py-2 focus:outline-none focus:border-emerald-600"
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e)=>{
+                setemail(e.target.value);
+              }}
             />
           </div>
 
@@ -39,6 +65,10 @@ const App = () => {
               className="border-2 border-gray-300 rounded-md w-full px-3 py-2 focus:outline-none focus:border-emerald-600"
               type="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={(e)=>{
+                 setpassword(e.target.value);
+              }}
             />
           </div>
 
