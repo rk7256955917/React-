@@ -1,0 +1,10 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "price": 299,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591"
+    }
+  ]
+}

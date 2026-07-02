@@ -8,7 +8,10 @@ const [password, setpassword] = useState('');
 
 const submitHandler=(e)=>{
   e.preventDefault()
-  console.log(fullName,email,password);
+ 
+if(password,length<8){
+  set
+}
 
   setfullName('');
   setemail('');
@@ -70,8 +73,7 @@ const submitHandler=(e)=>{
                  setpassword(e.target.value);
               }}
             />
-          </div>
-
+          </div>  
           <button
             className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md font-semibold active:scale-95 duration-200"
           >
